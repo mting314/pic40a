@@ -1,0 +1,15 @@
+5:52 "...entirely of alphanumeric characters in here"
+     --> "...entirely of alphanumeric characters or characters from here"
+
+7:14 "plus equals"
+     I'm too used to saying that from teaching "+=";
+     I meant to say "plus minus"; ± is a much stranger character.
+
+
+RegEx hint...
+Make sure to use ^ and $.
+^ specifies that the match should be found at the start of the string.
+$ specifies that the match should be found at the end of the string.
+Together, they will make sure you get a total match.
+
+https://regex101.com/

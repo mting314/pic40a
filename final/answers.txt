@@ -1,0 +1,32 @@
+1. We would want to put this in the shut_the_box.js file, as this is where code/logic about playing the game itself is handled. If we want when the score *reaches* 0, this would be at the check_submission step. Between lines 48 and 49 we could insert something like
+
+// this is right after the box_score global gets knocked by from shutting boxes.
+if (box_score === 0){
+    alert(":clapping_emoji:Conglaturations!:clapping_emoji:You:clapping_emoji:have:clapping_emoji:shut:clapping_emoji:the:clapping_emoji:box!:clapping_emoji:");
+}
+
+2. I'd probably do something similar to how shut_the_box.php is set up, where we have both checks for login and setting username. In this case for scores.php, you'd want to put one last check at line 13 in my code. This  would be right after checking if $_SESSION['loggedin'], if you passed that check, you could insert something like
+
+if (!isset($_COOKIE['username'])) {
+    header('Location: welcome.php');
+    exit;
+}
+
+3. I think you'd only need to insert a single line in the CSS since the span that holds the roll result in my code already has a specific ID. You'd just insert 'color: red;' between lines 42 and 43 in style.css.
+
+4. You'd need to put this into score.php which is where the scores are originally posted right after you finish your game. To handle these scores, you could insert between lines 10 and 11 code very similarly to how the database is updated in the Lara's Botique new account example.
+
+$db = new SQLite3('scores.db');
+
+// Initialize table if it doesn't exist.
+$statement  = 'CREATE TABLE IF NOT EXISTS scores (';
+$statement .= 'username TEXT,                     ';
+$statement .= 'score    NUMERIC,                 )';
+
+$statement  = 'INSERT INTO scores ';
+$statement .= '(username, score) ';
+$statement .= 'VALUES ';
+$statement .= "($_POST['username'], $_POST['score'])";
+
+$db->exec($statement);
+$db->close();

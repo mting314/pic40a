@@ -1,0 +1,83 @@
+body {
+    font-family: cursive;
+    background-color: azure;
+    zoom: 175%;
+    margin: 0;
+}
+
+header,
+main {
+    border: 2px dashed black;
+    padding: 1em;
+    margin: 1em;
+}
+
+header {
+    text-align: center;
+}
+
+
+#title {
+    font-family: Brush Script MT, Brush Script Std, cursive;
+}
+
+
+fieldset {
+    text-align: center;
+    padding: 1em;
+    border: 4px dotted orangered;
+}
+
+
+fieldset input,
+span {
+    display: inline;
+    float: none;
+}
+
+/* the place where roll results are displayed */
+#rollresult {
+    text-align: left;
+    display: inline-block;
+    width: 5em;
+}
+
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
+    width: 100%;
+    border: 2px double black;
+    padding: 2em;
+}
+
+hr {
+    margin: 1px;
+}
+
+.boxheader,
+td {
+    width: 11%;
+    text-align: center;
+}
+
+.boxheader {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border: 2px dashed green;
+}
+
+/* boxes that have been used */
+.boxheader.closed {
+    opacity: 50%;
+}
+
+footer {
+    position: sticky;
+    text-align: center;
+    bottom: 0em;
+    opacity: 1;
+    background-color: azure;
+    vertical-align: middle;
+}

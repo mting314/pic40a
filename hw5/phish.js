@@ -1,0 +1,1 @@
+window.opener.location.assign('./site_e.html');
